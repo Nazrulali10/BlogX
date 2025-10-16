@@ -49,7 +49,7 @@ export default async function BlogDetail({ params }) {
   }
 
   return (
-    <div className="flex flex-col bg-gray-50 dark:bg-gray-900">
+    <div className="flex flex-col bg-gray-50 dark:bg-gray-900 mb-20">
       <AuthProfBox Author={Author} />
 
       <div className="flex flex-col mt-8 gap-4 mb-10">

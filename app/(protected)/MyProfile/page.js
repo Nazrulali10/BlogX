@@ -150,7 +150,7 @@ const [badgeColor, setBadgeColor] = useState(authUser?.badgecolor || "");
       : false;
   const user = allUsers.find((u) => u._id === authUser._id);
   return (
-    <div className="flex flex-col bg-gray-50 dark:bg-gray-900 min-h-screen p-2 md:p-10 text-black dark:text-white">
+    <div className="flex flex-col bg-gray-50 dark:bg-gray-900 min-h-screen p-2 md:p-10 text-black dark:text-white mb-20">
       <div>
         <div className="flex w-full justify-center">
           <h1 className="text-3xl">My Profile</h1>
