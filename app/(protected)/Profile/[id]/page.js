@@ -25,7 +25,7 @@ async function getAllBlogs() {
 }
 
 export default async function ProfilePage({ params }) {
-   await new Promise((resolve) => setTimeout(resolve, 12000));
+  
   const session = await getServerSession(authOptions)
   if (!session) redirect('/login')
 

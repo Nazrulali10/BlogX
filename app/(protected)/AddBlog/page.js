@@ -74,7 +74,7 @@ const AddPost = () => {
   }
 
   return (
-    <div className='flex w-full justify-start md:justify-center bg-gray-50 dark:bg-gray-950 min-h-screen'>
+    <div className='flex w-full justify-start md:justify-center bg-gray-50 dark:bg-gray-950 min-h-screen mb-10'>
       <div className='flex flex-col w-90 md:w-150 gap-4 py-10 items-center'>
         <div className='w-full flex justify-center font-bold mb-5'>
           <h1 className='text-blue-700 dark:text-blue-600 text-3xl'>Add New Blog</h1>
