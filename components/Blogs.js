@@ -91,7 +91,7 @@ const Blogs = ({ mainFilter, categoryFilter }) => {
         // 👇 Skeleton placeholder while loading
         <SkeletonTheme baseColor="#202020" highlightColor="#444">
           {[...Array(3)].map((_, i) => (
-            <div key={i} className='flex flex-col gap-3 p-4 border-b'>
+            <div key={i} className='flex flex-col gap-3 p-4 '>
               <div className='flex gap-3 items-center'>
                 <Skeleton circle height={40} width={40} />
                 <Skeleton height={20} width={120} />
