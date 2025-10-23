@@ -4,30 +4,18 @@
 import React, { useEffect } from 'react'
 import BlogCard from './BlogCard'
 import { UseAppContext } from '@/context/AppContext'
-
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
 
 const Blogs = ({ mainFilter, categoryFilter }) => {
+  const { blogs, getBlogs, authUser } = UseAppContext()
 
-  
-  const { blogs,getBlogs,authUser } = UseAppContext()
-
-
-  useEffect(()=>{
-
+  useEffect(() => {
     getBlogs()
-  },[])
+  }, [])
 
- 
-
-  
-
-
-  
   const FollowingBlog =
     authUser?.following?.length > 0
-      ? authUser.following
-          .map((following) => blogs.find((b) => b.author === following))
-          .filter(Boolean)
+      ? blogs.filter((b) => authUser.following.includes(b.author))
       : []
 
   return (
@@ -40,7 +28,17 @@ const Blogs = ({ mainFilter, categoryFilter }) => {
             )
             .map((blog, i) => <BlogCard key={i} blog={blog} />)
         ) : (
-          <p className='flex justify-center text-black dark:text-white'>No blogs posted yet.</p>
+         
+          <SkeletonTheme>
+            <div className='flex flex-col'>
+              <div className='flex gap-2'>
+                <Skeleton circle height={15} width={15}/>
+                 <Skeleton height={15} width={100}/>
+              </div>
+              <Skeleton width={300} height={300}/>
+            </div>
+          </SkeletonTheme>
+         
         )
       ) : (
         <div>
@@ -49,7 +47,9 @@ const Blogs = ({ mainFilter, categoryFilter }) => {
               <BlogCard key={i} blog={blog} />
             ))
           ) : (
-            <p className='flex justify-center text-black dark:text-white'>No blogs from people you follow yet.</p>
+            <p className='flex justify-center text-black dark:text-white'>
+              No blogs from people you follow yet.
+            </p>
           )}
         </div>
       )}
@@ -58,3 +58,4 @@ const Blogs = ({ mainFilter, categoryFilter }) => {
 }
 
 export default Blogs
+
