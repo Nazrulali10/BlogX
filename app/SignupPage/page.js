@@ -178,8 +178,8 @@ const SignupPage = () => {
     <div className="w-full flex md:flex-row flex-col justify-center  py-10 gap-8">
       
       {/* === Badge Info Section === */}
-      <div className="text-center bg-white dark:bg-gray-900 border border-gray-300/60 rounded-xl p-6 shadow-sm max-w-lg w-full">
-        <h2 className="text-xl font-semibold text-gray-800 dark:text-white mb-4">
+      <div className="flex flex-col text-center h-fit   bg-white dark:bg-gray-900 border border-gray-300/60 rounded-xl py-10 px-6 shadow-sm max-w-lg w-full">
+        <h2 className="text-xl font-semibold text-gray-800 dark:text-white mb-8">
           Each Badge Represents a Specific Interest
         </h2>
 
@@ -206,6 +206,7 @@ const SignupPage = () => {
           </div>
         </div>
       </div>
+      
 
       {/* === Signup Form === */}
       <form
