@@ -8,10 +8,19 @@ import { UseAppContext } from "@/context/AppContext";
 import { toast } from "react-toastify";
 
 const BlogCard = ({ blog }) => {
-  const {allUsers} = UseAppContext()
+  const { allUsers } = UseAppContext();
+
+  if (!blog || !allUsers?.length) return null; 
+
+  const Author = allUsers.find(
+    (author) => author._id === blog?.author
+  );
+
+  if (!Author) return null; 
+  
   const [likes, setLikes] = useState(blog?.likes>0?blog.likes:0);
   const router = useRouter();
-  const Author = allUsers.find((author) => author._id === blog.author);
+  
   const date = new Date(blog.createdAt);
   const handlelike = async()=>{
     try {
