@@ -5,9 +5,6 @@ import { ToastContainer } from "react-toastify";
 import ClientProviders from "@/components/ClientProviders";
 import BottomNav from "@/components/BottomNav";
 
-
-
-
 export const metadata = {
   title: "BlogX",
   description: "Next.js App",
@@ -17,34 +14,19 @@ export const metadata = {
   },
 };
 
-
-
-
 export default function RootLayout({ children }) {
-  
   return (
-   
     <html lang="en">
       <body className="transition-colors duration-300 bg-white text-black dark:bg-gray-950 dark:text-white">
-       
-       
-           <ClientProviders>
-           <NavigationBar/>
-             <ToastContainer theme="dark" />
-             <div className="px-2 md:px-50 ">
-          {children}
-          </div>
+        <ClientProviders>
+          <NavigationBar />
+          <ToastContainer theme="dark" />
+          <div className="px-2 md:px-50 ">{children}</div>
           <div className="md:hidden">
-             <BottomNav/>
+            <BottomNav />
           </div>
-           
-          
-          
-          </ClientProviders>
-         
-        
+        </ClientProviders>
       </body>
     </html>
-    
   );
 }

@@ -146,7 +146,7 @@ const [badgeColor, setBadgeColor] = useState(authUser?.badgecolor || "");
     authUser?.blogs?.length > 0
       ? authUser.blogs.map((blogid) =>
           blogs.find((blog) => blog._id === blogid)
-        )
+        ).filter(Boolean)
       : false;
   const user = allUsers.find((u) => u._id === authUser._id);
   return (
